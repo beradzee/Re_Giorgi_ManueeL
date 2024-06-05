@@ -14,9 +14,7 @@ body {
                 max-width: 1100px;
                 width: 100%;
                 background-color: black;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
+                @extend %flex-space-;
 
                 .navigation {
                     max-width: 423px;
@@ -43,10 +41,7 @@ body {
             }
         }
         .under_line {
-            max-width: 1110px;
-            height: 1px;
-            width: 100%;
-            margin: 0 auto;
+            @extend %under-line;
             background-color: #979797;
         }
     }
