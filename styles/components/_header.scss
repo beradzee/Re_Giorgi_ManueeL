@@ -1,55 +1,130 @@
 body {
+  height: 300vh;
+  header {
+    background-color: $black-color;
+    .header_contaiener {
+      max-width: 1440px;
+      background-color: $black-color;
+      height: 100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
 
-    header {
-        background-color: black;
-        .header_contaiener {
-            max-width: 1440px;
-            background-color: black;
-            height: 100px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: center;
-            
-            .header_content {
-                max-width: 1100px;
-                width: 100%;
-                background-color: black;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
+      .menu-btn {
+        display: none !important;
+        margin-right: 40px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 16px;
+        height: 15px;
+        cursor: pointer;
+        transition: all 0.5s ease-in-out;
+        @media (max-width: 768px) {
+          display: block !important;
+        }
+        .menu-btn__burger {
+          width: 16px;
+          height: 3px;
+          background: $white-color;
+          box-shadow: 0 2px 5px $box-shadow;
+          transition: all 0.5s ease-in-out;
+        }
+        .menu-btn__burger::before,
+        .menu-btn__burger::after {
+          content: "";
+          position: absolute;
+          width: 16px;
+          height: 3px;
+          background: $white-color;
+          box-shadow: 0 2px 5px var(box-shadow);
+          transition: all 0.5s ease-in-out;
+        }
+        .menu-btn__burger::before {
+          transform: translateY(-6px);
+        }
+        .menu-btn__burger::after {
+          transform: translateY(6px);
+        }
+      }
+      .menu-btn.open .menu-btn__burger {
+        transform: translateX(-50px);
+        background: transparent;
+        box-shadow: none;
+      }
+      .menu-btn.open .menu-btn__burger::before {
+        transform: rotate(45deg) translate(35px, -35px);
+      }
+      .menu-btn.open .menu-btn__burger::after {
+        transform: rotate(-45deg) translate(35px, 35px);
+      }
 
-                .navigation {
-                    max-width: 423px;
-                    width: 100%;
-                    align-items: center;
-                    height: 25px;
+      .container-logo {
+        display: flex;
+        align-items: center;
+      }
 
-                    nav {
-                        ul {
-                            display: flex;
-                            justify-content: space-between;
-                            align-items: center;
-                            
-                            a {
-                                color: #FFFFFF;
-                                font-family: sans-serif;
-                                font-weight: 700;
-                                letter-spacing: 2px;
-                                line-height: 25px;
-                            }
-                        }
-                    }
-                }
+      .header_content {
+        max-width: 1130px;
+        padding: 0 10px;
+        width: 100%;
+        background-color: $black-color;
+        @extend %flex;
+
+        .navigation {
+          max-width: 423px;
+          width: 100%;
+          align-items: center;
+          height: 25px;
+
+          nav {
+            @media (max-width: 768px) {
+              display: none;
             }
-        }
-        .under_line {
-            max-width: 1110px;
-            height: 1px;
-            width: 100%;
-            margin: 0 auto;
-            background-color: #979797;
-        }
-    }
-}
-// 
+            ul {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
 
+              a {
+                color: $white-color;
+                font-family: sans-serif;
+                font-weight: 700;
+                letter-spacing: 2px;
+                line-height: 25px;
+              }
+            }
+          }
+        }
+        .cart {
+          a {
+            .cart-icon {
+              width: 23px;
+              height: 20px;
+
+              path {
+                transition: 250ms;
+              }
+            }
+          }
+          &:hover {
+            a {
+              .cart-icon {
+                path {
+                  fill: red;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .under_line {
+      @extend %container-width;
+      background-color: #979797;
+      height: 1px;
+    }
+  }
+}
