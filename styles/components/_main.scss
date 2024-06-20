@@ -10,6 +10,7 @@
     display: flex;
     height: 633px;
     justify-content: space-between;
+    overflow-y: hidden;
 
     @media (max-width: 1000px) {
       position: relative;
@@ -26,6 +27,10 @@
         position: absolute;
         z-index: 3;
         align-items: center;
+        text-align: center;
+      }
+      @media (max-width: 440px) {
+        max-width: 328px;
         text-align: center;
       }
 
@@ -46,6 +51,11 @@
         font-weight: 700;
         color: $white-color;
         margin-bottom: 24px;
+        @media (max-width: 440px) {
+          font-size: 36px;
+          letter-spacing: 1.29px;
+          line-height: 40px;
+        }
       }
 
       .product_description {
@@ -88,9 +98,8 @@
         z-index: 2;
       }
       img {
-        width: 100%;
         @media (max-width: 1000px) {
-          height: 100%;
+          object-fit: cover;
         }
       }
     }
@@ -183,17 +192,85 @@
       letter-spacing: 1.43px;
       font-size: 40px;
       text-transform: uppercase;
+      @media (max-width: 1050px) {
+        margin-top: 50px;
+      }
     }
     span {
       color: $orange-color;
     }
     .description {
+      @media (max-width: 1050px) {
+        text-align: center;
+      }
       font-size: 15px;
       line-height: 25px;
       font-weight: 700;
       font-family: sans-serif;
       margin-top: 32px;
       opacity: 50%;
+    }
+  }
+}
+
+.swiper_container {
+  max-width: 1130px;
+  padding: 0 10px;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 120px;
+  .nav {
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    margin-bottom: 53px;
+    h3 {
+      font-size: 48px;
+      font-family: sans-serif;
+      line-height: 57px;
+      font-weight: 700;
+    }
+    .swiper_button_con {
+      display: flex;
+      align-items: center;
+      .swiper-button-prev1 {
+        margin-right: 14px;
+      }
+    }
+  }
+  .swiper-rame {
+    display: flex;
+    justify-content: space-between;
+
+    .rate-box {
+      .star_con {
+        margin-bottom: 15px;
+      }
+      flex: 0.31;
+
+      padding: 28px 32px;
+      border: 1px solid #999999;
+      border-radius: 20px;
+      .star_icon {
+        margin-bottom: 15px;
+      }
+      h6 {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 22px;
+        font-family: sans-serif;
+        display: flex;
+        align-items: center;
+        margin-bottom: 12px;
+        img {
+          margin-left: 4px;
+        }
+      }
+      p {
+        line-height: 22px;
+        font-weight: 400px;
+        font-family: sans-serif;
+      }
     }
   }
 }

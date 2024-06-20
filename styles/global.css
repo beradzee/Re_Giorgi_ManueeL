@@ -157,7 +157,7 @@ body {
 }
 
 body {
-  height: 200vh;
+  height: 300vh;
 }
 body header {
   background-color: black;
@@ -281,6 +281,7 @@ body header .under_line {
   display: flex;
   height: 633px;
   justify-content: space-between;
+  overflow-y: hidden;
 }
 @media (max-width: 1000px) {
   .product_section .products {
@@ -303,6 +304,12 @@ body header .under_line {
     text-align: center;
   }
 }
+@media (max-width: 440px) {
+  .product_section .products .product_content {
+    max-width: 328px;
+    text-align: center;
+  }
+}
 .product_section .products .product_content .new_p {
   color: #989898;
   font-family: sans-serif;
@@ -319,6 +326,13 @@ body header .under_line {
   font-weight: 700;
   color: white;
   margin-bottom: 24px;
+}
+@media (max-width: 440px) {
+  .product_section .products .product_content .product_name {
+    font-size: 36px;
+    letter-spacing: 1.29px;
+    line-height: 40px;
+  }
 }
 .product_section .products .product_content .product_description {
   color: #999999;
@@ -357,12 +371,10 @@ body header .under_line {
     z-index: 2;
   }
 }
-.product_section .products .product_img img {
-  width: 100%;
-}
 @media (max-width: 1000px) {
   .product_section .products .product_img img {
-    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
 }
 
@@ -457,6 +469,11 @@ body header .under_line {
   font-size: 40px;
   text-transform: uppercase;
 }
+@media (max-width: 1050px) {
+  .Ad_section .Ad_content .title {
+    margin-top: 50px;
+  }
+}
 .Ad_section .Ad_content span {
   color: #d87d4a;
 }
@@ -467,6 +484,71 @@ body header .under_line {
   font-family: sans-serif;
   margin-top: 32px;
   opacity: 50%;
+}
+@media (max-width: 1050px) {
+  .Ad_section .Ad_content .description {
+    text-align: center;
+  }
+}
+
+.swiper_container {
+  max-width: 1130px;
+  padding: 0 10px;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 120px;
+}
+.swiper_container .nav {
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+  margin-bottom: 53px;
+}
+.swiper_container .nav h3 {
+  font-size: 48px;
+  font-family: sans-serif;
+  line-height: 57px;
+  font-weight: 700;
+}
+.swiper_container .nav .swiper_button_con {
+  display: flex;
+  align-items: center;
+}
+.swiper_container .nav .swiper_button_con .swiper-button-prev1 {
+  margin-right: 14px;
+}
+.swiper_container .swiper-rame {
+  display: flex;
+  justify-content: space-between;
+}
+.swiper_container .swiper-rame .rate-box {
+  flex: 0.31;
+  padding: 28px 32px;
+  border: 1px solid #999999;
+  border-radius: 20px;
+}
+.swiper_container .swiper-rame .rate-box .star_con {
+  margin-bottom: 15px;
+}
+.swiper_container .swiper-rame .rate-box .star_icon {
+  margin-bottom: 15px;
+}
+.swiper_container .swiper-rame .rate-box h6 {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 22px;
+  font-family: sans-serif;
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.swiper_container .swiper-rame .rate-box h6 img {
+  margin-left: 4px;
+}
+.swiper_container .swiper-rame .rate-box p {
+  line-height: 22px;
+  font-weight: 400px;
+  font-family: sans-serif;
 }
 
 body header .header_contaiener .header_content {
