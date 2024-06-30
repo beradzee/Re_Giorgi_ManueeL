@@ -1,5 +1,6 @@
 .product_section {
   background-color: $black-color;
+  overflow: hidden;
 
   .products {
     max-width: 1110px;
@@ -10,12 +11,12 @@
     display: flex;
     height: 633px;
     justify-content: space-between;
-    overflow-y: hidden;
 
     @media (max-width: 1000px) {
       position: relative;
       justify-content: center;
       align-self: center;
+      overflow: hidden;
     }
 
     .product_content {
@@ -179,6 +180,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  overflow: hidden;
   @media (max-width: 1050px) {
     flex-direction: column-reverse;
   }
@@ -209,6 +211,15 @@
       font-family: sans-serif;
       margin-top: 32px;
       opacity: 50%;
+    }
+    .img_div {
+      @media (max-width: 1050px) {
+        width: 100%;
+        overflow: hidden;
+      }
+      img {
+        object-fit: cover;
+      }
     }
   }
 }
@@ -270,6 +281,62 @@
         line-height: 22px;
         font-weight: 400px;
         font-family: sans-serif;
+      }
+    }
+  }
+}
+
+.count_down {
+  margin: 0 auto;
+  margin-top: 120px;
+  max-width: 1130px;
+  padding: 0 10px;
+  margin-bottom: 256px;
+  h6 {
+    font-size: 48px;
+    line-height: 65px;
+    font-weight: 900;
+    font-family: sans-serif;
+    margin-bottom: 48px;
+    @media (max-width: 600px) {
+      text-align: center;
+    }
+  }
+  .timer-div {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    @media (max-width: 600px) {
+      flex-direction: column;
+      align-items: center;
+    }
+    .box {
+      width: 252px;
+      height: 200px;
+      background-color: $black-color;
+      color: $white-color;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-radius: 22px;
+      @media (max-width: 600px) {
+        &:not(:first-child) {
+          margin-top: 20px; // Adjust the margin value as needed
+        }
+      }
+
+      p {
+        font-family: sans-serif;
+        font-weight: 300;
+        line-height: 24px;
+      }
+      .live {
+        font-size: 64px;
+        line-height: 96px;
+        font-family: sans-serif;
+        font-weight: 900;
       }
     }
   }
